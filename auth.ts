@@ -24,14 +24,14 @@ export const { auth, signIn, signOut } = NextAuth({
         Credentials({
             async authorize(credentials) {
                 const parsedCredentials = z
-                    .object({ email: email(), password: z.string().min(6) })
+                    .object({ email: z.string().email(), password: z.string().min(6) })
                     .safeParse(credentials);
 
                     if (parsedCredentials.success) {
                         const { email, password } = parsedCredentials.data;
                         const user = await getUser(email);
                         if (!user) return null;
-                        const passwordMatch = await bycrpt.compare(password, user.password);
+                        const passwordMatch = await bcrpt.compare(password, user.password);
 
                         if (passwordMatch) return user;
                     }

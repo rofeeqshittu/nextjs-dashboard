@@ -62,7 +62,7 @@ The application is deployed and accessible at: [https://acme-nextjs-dashboard-ro
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/rofeeqshittu/nextjs-dashboard.git
 cd nextjs-dashboard
 ```
 
